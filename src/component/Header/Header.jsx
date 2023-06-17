@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 import React, { useState, useEffect } from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown,NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -41,13 +41,16 @@ const Header = () => {
               <Link to="/about" className="nav-link" onClick={() => setExpanded(false)}>
                 О нас
               </Link>
-              <Link to="/contact" className="nav-link" onClick={() => setExpanded(false)}>
+              <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
                 Войти/Зарегистрироваться 
               </Link>
-              <NavDropdown title="Общественные службы" id="public-services-dropdown">
+              <NavDropdown  title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
-                  <NavDropdown.Item key={service.id} href="#">
-                    {service.Name}
+                  
+                  <NavDropdown.Item>
+                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.id}`} key={service}>
+                       {service.Name}
+                     </Link>
                   </NavDropdown.Item>
                 ))}
               </NavDropdown>
