@@ -211,6 +211,12 @@
   ],
   "registration": [
     {
+      "username": "вфцв",
+      "password": "вфцвфц",
+      "photo": {},
+      "phone": "вфцвфц",
+      "email": "вфцв",
+      "token": "RdncRC3TCt",
       "id": 1
     }
   ],

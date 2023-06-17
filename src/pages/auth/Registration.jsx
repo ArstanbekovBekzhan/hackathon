@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import styles from './Registration.module.css';
 
 const Registration = () => {
@@ -21,7 +22,7 @@ const Registration = () => {
     return token;
   };
 
-  const handleRegistration = () => {
+  const handleRegistration = async () => {
     if (!username || !password || !phone || !email) {
       console.log('Please fill in all required fields');
       return;
@@ -31,15 +32,22 @@ const Registration = () => {
 
     localStorage.setItem('token', token);
 
-    console.log('Registration form submitted!');
-    console.log('Username:', username);
-    console.log('Password:', password);
-    console.log('Photo:', photo);
-    console.log('Phone:', phone);
-    console.log('Email:', email);
-    console.log('Token:', token);
+    const registrationData = {
+      username,
+      password,
+      photo,
+      phone,
+      email,
+      token
+    };
 
-    navigate('/home');
+    try {
+      const response = await axios.post('http://localhost:3000/registration', registrationData);
+      console.log('Registration successful:', response.data);
+      navigate('/register');
+    } catch (error) {
+      console.log('Registration failed:', error);
+    }
   };
 
   return (
