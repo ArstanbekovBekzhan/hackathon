@@ -65,8 +65,8 @@ const Header = ({ onHeaderHeight }) => {
               <Link to="/" className="nav-link" onClick={() => setExpanded(false)}>
                 Главная
               </Link>
-              <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                Войти
+               <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
+                 Войти
               </Link>
               <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
                 Личный кабинет

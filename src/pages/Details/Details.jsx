@@ -53,7 +53,7 @@ const CardDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className={SDCard.containerDetail}>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -74,7 +74,7 @@ const CardDetails = () => {
           <CardMap address={address} />
         </div>
       )}
-      <div>
+      <div className={SDCard.box_comment}>
       <h1 className={SDCard.title_comment}>Коментарий</h1>
         <Comment cardId={id} />
       </div>
