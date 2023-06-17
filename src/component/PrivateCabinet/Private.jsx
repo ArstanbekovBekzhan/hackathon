@@ -163,4 +163,4 @@ const Private = () => {
   );
 };
 
-export { Private };
+export default Private ;
