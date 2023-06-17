@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
-import { ImageResizer } from 'react-image-resizer';
-
 
 const Registration = () => {
   const [username, setUsername] = useState('');
@@ -52,12 +50,15 @@ const Registration = () => {
     }
   };
 
-  const handleFileChange = async (event) => {
+  const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const resizedImage = await Resizer.imageFileResizer(file, 300, 300, 'JPEG', 100, 0, (uri) => {
-        setPhoto(uri);
-      });
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64Image = reader.result;
+        setPhoto(base64Image);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
