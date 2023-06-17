@@ -73,7 +73,7 @@ const CardMap = ({ address }) => {
     };
   }, [address]);
 
-  return <div id="map" style={{ width: '100%', height: '400px' }}></div>;
+  return <div id="map" style={{ width: '100%', height: '400px', marginTop: '50px',zIndex: "1", boxShadow: '20px 20px 20px black', borderRadius: "10px" }}></div>;
 };
 
 export default CardMap;
