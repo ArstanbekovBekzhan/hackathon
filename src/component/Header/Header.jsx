@@ -42,13 +42,16 @@ const Header = () => {
                 О нас
               </Link>
               <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                Войти/Зарегистрироваться 
+                Войти
               </Link>
-              <NavDropdown  title="Общественные службы" id="public-services-dropdown">
+              <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
+                Личный кабинет
+              </Link>
+              <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   
                   <NavDropdown.Item>
-                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.id}`} key={service}>
+                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}`} key={service}>
                        {service.Name}
                      </Link>
                   </NavDropdown.Item>
