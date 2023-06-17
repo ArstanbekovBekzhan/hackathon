@@ -2,7 +2,7 @@ import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, NavDropdown,NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -39,19 +39,8 @@ const Header = () => {
               <Link to="/" className="nav-link" onClick={() => setExpanded(false)}>
                 Главная
               </Link>
-              {/* <Link to="/About" className="nav-link" onClick={() => setExpanded(false)}>
-                О нас
-              </Link> */}
                <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
                  Войти
-              </Link>
-<<<<<<< HEAD
-              <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                Войти/Зарегистрироваться 
-=======
-              <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
-                Личный кабинет
->>>>>>> eccbcc4948113b62b8540d52d1b119b1063ed173
               </Link>
               <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
                 Личный кабинет
@@ -60,14 +49,10 @@ const Header = () => {
                 {publicServices.map((service) => (
                   
                   <NavDropdown.Item>
-<<<<<<< HEAD
-                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.id}`} key={service}>
-=======
-                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}`} key={service}>
->>>>>>> eccbcc4948113b62b8540d52d1b119b1063ed173
-                       {service.Name}
-                     </Link>
-                  </NavDropdown.Item>
+                  <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}`} key={service.id}>
+                    {service.Name}
+                  </Link>
+                </NavDropdown.Item>
                 ))}
               </NavDropdown>
             </Nav>
