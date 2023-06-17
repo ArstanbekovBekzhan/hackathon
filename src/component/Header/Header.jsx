@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, NavDropdown,NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const [publicServices, setPublicServices] = useState([]);
@@ -38,11 +39,11 @@ const Header = () => {
               <Link to="/" className="nav-link" onClick={() => setExpanded(false)}>
                 Главная
               </Link>
-              <Link to="/about" className="nav-link" onClick={() => setExpanded(false)}>
+              {/* <Link to="/About" className="nav-link" onClick={() => setExpanded(false)}>
                 О нас
-              </Link>
-              <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                Войти
+              </Link> */}
+               <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
+                 Войти
               </Link>
               <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
                 Личный кабинет
