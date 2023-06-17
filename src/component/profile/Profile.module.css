@@ -1,0 +1,40 @@
+.registration-data {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+  }
+  
+  .registration-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .registration-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-photo {
+    max-width: 200px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

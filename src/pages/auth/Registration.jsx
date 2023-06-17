@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
@@ -6,9 +6,10 @@ import styles from './Registration.module.css';
 const Registration = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [photo, setPhoto] = useState('');
+  const [photoUrl, setPhotoUrl] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [previewImage, setPreviewImage] = useState('');
 
   const navigate = useNavigate();
 
@@ -35,7 +36,7 @@ const Registration = () => {
     const registrationData = {
       username,
       password,
-      photo,
+      photoUrl, // Updated to use photoUrl instead of photo
       phone,
       email,
       token
@@ -51,15 +52,9 @@ const Registration = () => {
   };
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64Image = reader.result;
-        setPhoto(base64Image);
-      };
-      reader.readAsDataURL(file);
-    }
+    const photoUrl = event.target.value;
+    setPhotoUrl(photoUrl);
+    setPreviewImage(photoUrl);
   };
 
   return (
@@ -82,14 +77,20 @@ const Registration = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+
+        {previewImage && (
+          <img src={previewImage} alt="Preview" className={styles.previewImage} />
+        )}
+
         <label>
-          Photo:
+          Photo URL:
           <input
-            type="file"
-            accept="image/*"
+            type="text"
+            value={photoUrl}
             onChange={handleFileChange}
           />
         </label>
+
         <label>
           Phone:
           <input
