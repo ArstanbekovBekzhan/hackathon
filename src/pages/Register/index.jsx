@@ -8,4 +8,4 @@ import Form from "../../component/Form";
   )
  }
 
-//  export default Register
+ export default Register
