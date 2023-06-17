@@ -2,6 +2,11 @@
   margin-top: 15px;
 }
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 20px;
   background: linear-gradient(-45deg, #022738, #00454e, #000000, #04693d, #00923b);
    background-size: 400% 400%;
    animation: gradient 15s ease infinite;
