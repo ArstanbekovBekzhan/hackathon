@@ -39,7 +39,7 @@ const Header = ({ onHeaderHeight }) => {
     handleHeaderHeight();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  const hasToken = localStorage.getItem('token'); // Check if token exists in localStorage
   useEffect(() => {
     const handleResize = () => {
       handleHeaderHeight();
@@ -65,12 +65,19 @@ const Header = ({ onHeaderHeight }) => {
               <Link to="/" className="nav-link" onClick={() => setExpanded(false)}>
                 Главная
               </Link>
-               <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                 Войти
-              </Link>
-              <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
+              {!hasToken && (
+                <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
+                  Регистрация
+                </Link>
+              )}
+              {(
+                hasToken &&(
+                  <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
                 Личный кабинет
               </Link>
+                )
+              )}
+              
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   <NavDropdown.Item key={service.eng}>

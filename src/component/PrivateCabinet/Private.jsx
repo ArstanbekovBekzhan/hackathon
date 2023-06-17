@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import p from './Private.module.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const Private = () => {
   const [done, setDone] = useState(null);
@@ -13,6 +14,16 @@ const Private = () => {
   const [tag, setTag] = useState('');
   const [subtitleVisible, setSubtitleVisible] = useState(true);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      // Redirect to another page if the token is missing
+      navigate('/login');
+    }
+  }, [navigate]);
   const modalRef = useRef(null);
 
   const handleToggle = (value) => {

@@ -5,7 +5,6 @@ import { CardDetails } from './pages/Details/Details';
 import { Layout } from './component/Layout/Layout.jsx';
 import Private from './component/PrivateCabinet/Private.jsx'
 import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
-import { Layout } from './component/Layout/Layout.jsx'
 import Registration from './pages/auth/Registration';
 import Login from './pages/auth/Login';
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
@@ -6,7 +6,7 @@ import styles from './Registration.module.css';
 const Registration = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [photo, setPhoto] = useState('');
+  const [img, setimg] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
@@ -21,6 +21,15 @@ const Registration = () => {
     }
     return token;
   };
+  
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      // Redirect to another page or show an error message
+      navigate('/blocked');
+    }
+  }, [navigate]);
 
   const handleRegistration = async () => {
     if (!username || !password || !phone || !email) {
@@ -29,13 +38,17 @@ const Registration = () => {
     }
 
     const token = generateToken();
+    const IMG = img;
+    const Username = username;
 
     localStorage.setItem('token', token);
+    localStorage.setItem('IMG', IMG);
+    localStorage.setItem("Username", Username);
 
     const registrationData = {
       username,
       password,
-      photo,
+      img,
       phone,
       email,
       token
@@ -44,7 +57,7 @@ const Registration = () => {
     try {
       const response = await axios.post('http://localhost:3000/registration', registrationData);
       console.log('Registration successful:', response.data);
-      navigate('/register');
+      navigate('/login'); // Перенаправление на страницу "Login" после успешной регистрации
     } catch (error) {
       console.log('Registration failed:', error);
     }
@@ -56,7 +69,7 @@ const Registration = () => {
       const reader = new FileReader();
       reader.onload = () => {
         const base64Image = reader.result;
-        setPhoto(base64Image);
+        setimg(base64Image);
       };
       reader.readAsDataURL(file);
     }
