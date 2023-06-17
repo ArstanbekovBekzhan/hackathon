@@ -1,6 +1,8 @@
+import React from "react"
+import './home.css'
 const Homepage = () => {
   return (
-      <div>
+      <div className="container">
           <h1>Homepage</h1>
       </div>
   )

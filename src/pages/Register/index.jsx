@@ -1,10 +1,11 @@
 import React from "react";
- const Register = () => {
+import Form from "../../component/Form";
+ export const Register = () => {
   return (
     <div>
-      register
+      <Form/>
     </div>
   )
  }
 
- export default Register
+//  export default Register
