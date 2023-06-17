@@ -4,6 +4,7 @@
     height: auto;
     background-color: white;
     justify-content: space-between;
+    margin-top: 60px;
 }
 
 .user_box {
@@ -15,17 +16,20 @@
 }
 
 .user_box img {
+    cursor: pointer;
     border-radius: 50%;
     width: 10em;
     margin-bottom: 50px;
 }
 
 .name {
+    cursor: pointer;
     border-bottom: 2px black solid;    
     margin-bottom: 50px;
 }
 
 .red_box {
+    cursor: pointer;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -36,14 +40,25 @@
     margin-bottom: 50px;
 }
 
+.red_box:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+
+.red_box:active {
+    scale: 1.5;
+    transition: 1s;
+}
+
 .red_circle {
     width: 20%;
-    height: 38%;
+    height: 50%;
     background-color: red;
     border-radius: 50%;
 }
 
 .green_box {
+    cursor: pointer;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -54,9 +69,19 @@
     margin-bottom: 50px; 
 }
 
+.green_box:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+
+.green_box:active {
+    scale: 1.5;
+    transition: 1s;
+}
+
 .green_circle {
     width: 20%;
-    height: 38%;
+    height: 50%;
     background-color: green;
     border-radius: 50%;
 }
@@ -69,6 +94,7 @@
 }
 
 .add_btn {
+    cursor: pointer;
     color: white;
     background-color: blue;
     border-radius: 20px;
@@ -76,4 +102,13 @@
     width: 190px;
     height: 50px;
     margin: 0 auto;
+}
+
+.add_btn:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+.add_btn:active {
+    scale: 1.5;
+    transition: 1s;
 }
