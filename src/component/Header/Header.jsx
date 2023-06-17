@@ -1,27 +1,28 @@
 import React from 'react';
 import "./Header.css";
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
-const Header = ({ onHeaderHeight }) => {
+import { Link } from 'react-router-dom'
+
+const Header = () => {
   return (
     <div>
-    <section class="top-nav">
-      <div>Airngas Controls</div>
-      <input id="menu-toggle" type="checkbox" />
-      <label class="menu-button-container" for="menu-toggle">
-        <div class="menu-button"></div>
-      </label>
-      <ul class="menu">
-        <li>
-          <a href="#products">Products</a>
-        </li>
-        <li>
-          <a href="#whyus">Why Us?</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </section>
+        <Navbar collapseOnSelect expand="md" variant="dark">
+                <Container id='bar'>
+                    <Navbar.Brand href="/">
+                 
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className='nav-list'>
+                            <Link to="/" >Главная</Link>
+                            <Link to="/about">О Нас </Link>
+                            {/* <Link to="/contacts"></Link> */}
+                            <Link to="/signUp">Войти</Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
   </div>
   );
 };
