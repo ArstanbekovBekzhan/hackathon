@@ -6,7 +6,7 @@ const Card = ({ cards }) => (
       <div className={SCard.Cards} >
          {cards.map(card => (
           <NavLink  className={SCard.Card} key={card.id} to={`/cards/${card.id}`}>
-          <div className="img">
+          <div>
           <img src={card.image || Erros } alt="" />
           </div>
           <div className={SCard.text}>
