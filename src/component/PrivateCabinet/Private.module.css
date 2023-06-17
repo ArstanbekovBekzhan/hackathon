@@ -63,12 +63,7 @@
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    display: flex; 
     justify-content: space-around;
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .subtitle {

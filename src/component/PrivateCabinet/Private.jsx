@@ -124,7 +124,6 @@ const Private = () => {
           </div>
         </div>
       )}
-      <button className={p.add_btn}>Добавить событие</button> 
     </div>
   );
 }
