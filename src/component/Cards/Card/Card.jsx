@@ -1,5 +1,5 @@
-import SCard from "./Card.module.css"
-import Erros from "../../../Galilee/errors.png"
+import SCard from "./Card.module.css";
+import Erros from "../../../Galilee/errors.png";
 import { NavLink } from "react-router-dom";
 
 const Card = ({ cards }) => (
@@ -15,9 +15,13 @@ const Card = ({ cards }) => (
             <img src={card.Nick_image} alt="#" />
           <h4>{card.Nick}</h4>
           </div>
+          <div className={SCard.made}>
+            <img src={card.made ? 'https://cdn-icons-png.flaticon.com/512/1280/1280891.png' : 'https://w7.pngwing.com/pngs/206/841/png-transparent-multiplication-sign-symbol-x-mark-symbol-miscellaneous-angle-playstation-4.png'} alt="" />
           </div>
-          </NavLink>
-      ))}
-      </div>
-  );
-export {Card}
+        </div>
+      </NavLink>
+    ))}
+  </div>
+);
+
+export { Card };
