@@ -154,15 +154,28 @@
         }
       ]
     },
+    
+   {
+  "id": "8",
+  "made": true,
+  "Nick": "Максим",
+  "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
+  "title": "Отсутствие уличного освещения",
+  "text": "В ночное время это место становится полной темнотой. Отсутствие уличного освещения создает небезопасную обстановку и вызывает чувство беспокойства. Я не могу понять, почему не установили фонари?",
+  "image": "https://kolodischi.by/piximage/wm/L3BpeGltYWdlL3Jlc2l6ZS82ODR4Ki9zdG9yYWdlL3VwbG9hZGVkL2FlYzRmNzRmNjZkMjFmZmFmMzJkOTBiZWI0YWNlOWFjLmpwZw==.jpg",
+  "location": "Ахунбаева улица, дом 89",
+  "comments": [
     {
-      "id": "8",
-      "Nick": "Максим",
-      "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
-      "title": "Отсутствие уличного освещения",
-      "text": "В ночное время это место становится полной темнотой. Отсутствие уличного освещения создает небезопасную обстановку и вызывает чувство беспокойства. Я не могу понять, почему не установили фонари?",
-      "image": "https://kolodischi.by/piximage/wm/L3BpeGltYWdlL3Jlc2l6ZS82ODR4Ki9zdG9yYWdlL3VwbG9hZGVkL2FlYzRmNzRmNjZkMjFmZmFmMzJkOTBiZWI0YWNlOWFjLmpwZw==.jpg",
-      "location": "Ахунбаева улица, дом 89" 
+      "user": "Иван",
+      "comment": "Согласен, это действительно проблема. Необходимо обратить внимание властей на эту ситуацию и принять меры по установке уличного освещения."
     },
+    {
+      "user": "Елена",
+      "comment": "Уличное освещение очень важно для обеспечения безопасности в районе. Я поддерживаю вашу инициативу по установке фонарей."
+    }
+  ]
+},
+
     {
       "id": "9",
       "made": false,

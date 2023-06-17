@@ -3,11 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SDCard from "./Details.module.css";
 import CardMap from '../../component/Cards/CardMap';
+import Comment from "../../component/Comments/comments";
 
 const CardDetails = () => {
   const [backgroundColor, setBackgroundColor] = useState("");
   const { id } = useParams();
-  const [Address, setAddress] = useState("");
+  const [address, setAddress] = useState("");
   const [card, setCard] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -37,9 +38,9 @@ const CardDetails = () => {
   };
 
   const getRandomDarkColor = () => {
-    const hue = Math.floor(Math.random() * 360); // Random hue value
-    const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
-    const lightness = Math.floor(Math.random() * 16) + 10; // Random lightness value between 10 and 25
+    const hue = Math.floor(Math.random() * 360); 
+    const saturation = Math.floor(Math.random() * 51) + 50; 
+    const lightness = Math.floor(Math.random() * 16) + 10; 
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
@@ -67,12 +68,16 @@ const CardDetails = () => {
             <div className={SDCard.right}>
               <h2>{card.title}</h2>
               <p>{card.text}</p>
-              <h4>{Address}</h4>
+              <h4>{address}</h4>
             </div>
           </div>
-          <CardMap address={Address} />
+          <CardMap address={address} />
         </div>
       )}
+      <div>
+        <div>кометарий</div>
+        <Comment cardId={id} />
+      </div>
     </div>
   );
 };
