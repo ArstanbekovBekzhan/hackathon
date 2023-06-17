@@ -22,7 +22,6 @@
         }
       ]
     },
-    
     {
       "id": "2",
       "made": false,
@@ -45,7 +44,6 @@
         }
       ]
     },
-    
     {
       "id": "3",
       "made": true,
@@ -68,7 +66,6 @@
         }
       ]
     },
-    
     {
       "id": "4",
       "made": true,
@@ -91,7 +88,6 @@
         }
       ]
     },
-    
     {
       "id": "5",
       "made": false,
@@ -114,7 +110,6 @@
         }
       ]
     },
-    
     {
       "id": "6",
       "made": true,
@@ -137,7 +132,6 @@
         }
       ]
     },
-    
     {
       "id": "7",
       "made": false,
@@ -160,10 +154,8 @@
         }
       ]
     },
-    
     {
       "id": "8",
-      "made": true,
       "Nick": "Максим",
       "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
       "title": "Отсутствие уличного освещения",
@@ -171,7 +163,6 @@
       "image": "https://kolodischi.by/piximage/wm/L3BpeGltYWdlL3Jlc2l6ZS82ODR4Ki9zdG9yYWdlL3VwbG9hZGVkL2FlYzRmNzRmNjZkMjFmZmFmMzJkOTBiZWI0YWNlOWFjLmpwZw==.jpg",
       "location": "Ахунбаева улица, дом 89" 
     },
-    
     {
       "id": "9",
       "made": false,
@@ -194,7 +185,6 @@
         }
       ]
     },
-    
     {
       "id": "10",
       "made": true,
@@ -219,7 +209,11 @@
     }
   ],
   "users": [
-    
+    {
+      "email": "sdfgh@mail.ru",
+      "password": "$2a$10$bT6b7nLUaRVLvdnxVxqVHeS4DmSXJ/TivIgh4RjHeRyOJJPHwO.3G",
+      "id": 1
+    }
   ],
   "publicServices": [
     {
