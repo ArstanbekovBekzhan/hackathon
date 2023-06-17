@@ -72,11 +72,8 @@
 .card_desk {
     width: 80%;
     display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between; */
-    display: flex; 
     flex-wrap: wrap;
+    display: flex; 
     justify-content: space-around;
 }
 
@@ -94,6 +91,7 @@
     scale: 0.9;
     transition: 1s;
 }
+
 .add_btn:active {
     scale: 1.5;
     transition: 1s;
