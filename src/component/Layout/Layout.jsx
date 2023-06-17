@@ -8,6 +8,7 @@ const Layout = () => {
 
   const handleHeaderHeight = (height) => {
     setHeaderHeight(height);
+    console.log(height);
   };
 
   return (

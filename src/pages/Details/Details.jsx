@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SDCard from "./Details.module.css";
-// import CardMap from './CardMap';
+import CardMap from '../../component/Cards/CardMap';
 
 const CardDetails = () => {
   const [backgroundColor, setBackgroundColor] = useState("");
@@ -70,7 +70,7 @@ const CardDetails = () => {
               <h4>{Address}</h4>
             </div>
           </div>
-          {/* <CardMap address={Address} /> */}
+          <CardMap address={Address} />
         </div>
       )}
     </div>
