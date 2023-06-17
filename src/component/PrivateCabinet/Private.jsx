@@ -10,6 +10,7 @@ const Private = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
+  const [tag, setTag] = useState('');
   const [subtitleVisible, setSubtitleVisible] = useState(true);
 
   const modalRef = useRef(null);
@@ -29,6 +30,7 @@ const Private = () => {
     setTitle('');
     setDescription('');
     setAddress('');
+    setTag('');
   };
 
   const handleFormSubmit = (e) => {
@@ -53,6 +55,7 @@ const Private = () => {
     setTitle('');
     setDescription('');
     setAddress('');
+    setTag('');
     setShowModal(false);
   };
 
@@ -144,6 +147,12 @@ const Private = () => {
                 placeholder="Напишите адрес"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
+              />
+              <input
+                type="radio"
+                placeholder="Напишите адрес"
+                value={tag}
+                onChange={(e) => setTag(e.target.value)}
               />
               <button type="submit">Сохранить</button>
             </form>
