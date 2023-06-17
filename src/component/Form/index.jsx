@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom"
 import './form.css'
-import { FaPencilAlt } from 'react-icons/fa'
+import { FaPencilAlt } from 'react-icons/fa';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import axios from "axios";
 const Form = () => {
