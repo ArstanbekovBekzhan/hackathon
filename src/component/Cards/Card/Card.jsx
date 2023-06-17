@@ -7,12 +7,12 @@ const Card = ({ cards }) => (
          {cards.map(card => (
           <NavLink  className={SCard.Card} key={card.id} to={`/cards/${card.id}`}>
           <div>
-          <img src={card.image || Erros } alt="" />
+          <img src={card.image || Erros } alt="#" />
           </div>
           <div className={SCard.text}>
           <h3>{card.title }</h3>
           <div className={SCard.Nik}>
-            <img src={card.Nick_image} alt="" />
+            <img src={card.Nick_image} alt="#" />
           <h4>{card.Nick}</h4>
           </div>
           </div>
