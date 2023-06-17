@@ -2,6 +2,7 @@
   "cards": [
     {
       "id": "1",
+      "made": true,
       "Nick": "Нурик",
       "Nick_image": "https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg",
       "title": "Столб",
@@ -24,6 +25,7 @@
     
     {
       "id": "2",
+      "made": false,
       "Nick": "Марина",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg",
       "title": "Дом",
@@ -46,6 +48,7 @@
     
     {
       "id": "3",
+      "made": true,
       "Nick": "Алексей",
       "Nick_image": "https://avatarzo.ru/wp-content/uploads/category_animals_300x300.jpg",
       "title": "Пешеходный переход",
@@ -68,6 +71,7 @@
     
     {
       "id": "4",
+      "made": true,
       "Nick": "Елена",
       "Nick_image": "https://aminosart.ru/wp-content/uploads/2021/04/Krutye-avatarki-swag-18.jpg",
       "title": "Светофор",
@@ -90,6 +94,7 @@
     
     {
       "id": "5",
+      "made": false,
       "Nick": "Иван",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551512888_2.jpg",
       "title": "Дорожные ямы",
@@ -112,6 +117,7 @@
     
     {
       "id": "6",
+      "made": true,
       "Nick": "Ольга",
       "Nick_image": "https://media.licdn.com/dms/image/C4E03AQHI2QIVppwUDQ/profile-displayphoto-shrink_800_800/0/1598966701723?e=2147483647&v=beta&t=FX-wMZ3LI2-Xji4RlnO8Og5g_li9fo25vkm1TEKOoKg",
       "title": "Остановка общественного транспорта",
@@ -134,6 +140,7 @@
     
     {
       "id": "7",
+      "made": false,
       "Nick": "Дмитрий",
       "Nick_image": "https://i.mycdn.me/i?r=AzHTJbfR1Z1DrzAcrKsnwlx-qG46nZB1Fj-8cF5kDCK67fcaXBpRGVJKjLLc0JH11no",
       "title": "Отсутствие тротуаров",
@@ -156,6 +163,7 @@
     
     {
       "id": "8",
+      "made": true,
       "Nick": "Максим",
       "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
       "title": "Отсутствие уличного освещения",
@@ -168,6 +176,7 @@
     
     {
       "id": "9",
+      "made": false,
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "Nick": "Екатерина",
       "title": "Проблема мусора на дорогах",
@@ -190,6 +199,7 @@
     
     {
       "id": "10",
+      "made": true,
       "Nick": "Екатерина",
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "title": "Отсутствие доступа к воде",
