@@ -8,19 +8,56 @@
 .form {
   color: white;
   min-width: 400px;
-  width: 100%;
+  width: 50%;
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.form_email {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.form_title {
+  margin-bottom: 40px;
 }
 
 .form_field {
   width: 100%;
   height: 40px;
   margin-bottom: 20px;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0 7px;
+  border-bottom: 1px solid #ffffff;
 }
 
 .form_btn {
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 10px 0;
+  background: #c56262;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 17px;
+  color: #fff;
+
+
+}
+ 
+.form_password {
+  position: relative;
+}
+
+.form_eye {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  cursor: pointer;
+  z-index: 10;
 }

@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 10px;
     position: relative;
     z-index: 2;
 }
@@ -55,7 +55,7 @@
   .social-icon {
     color: #fff;
     margin-right: 10px;
-    font-size: 24px;
+    font-size: 10px;
   }
   
   .footer-bottom {
