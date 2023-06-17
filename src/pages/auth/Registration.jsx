@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
+import { ImageResizer } from 'react-image-resizer';
+
 
 const Registration = () => {
   const [username, setUsername] = useState('');
@@ -50,6 +52,15 @@ const Registration = () => {
     }
   };
 
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const resizedImage = await Resizer.imageFileResizer(file, 300, 300, 'JPEG', 100, 0, (uri) => {
+        setPhoto(uri);
+      });
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h2>Registration</h2>
@@ -75,7 +86,7 @@ const Registration = () => {
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => setPhoto(e.target.files[0])}
+            onChange={handleFileChange}
           />
         </label>
         <label>
