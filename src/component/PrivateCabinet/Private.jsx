@@ -10,9 +10,11 @@ const Private = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
+  const [subtitleVisible, setSubtitleVisible] = useState(true);
 
   const handleToggle = (value) => {
     setDone(value);
+    setSubtitleVisible(false);
   };
 
   const handleModalOpen = () => {
@@ -79,6 +81,7 @@ const Private = () => {
         <button className={p.red_box} onClick={() => handleToggle(false)}>Не выполнено</button>
       </div>
       <div className={p.card_desk}>
+        {subtitleVisible && <h3 className={p.subtitle}>"Гражданская ответственность — действие, открытое сердцем и умом!"</h3>}
         {cards.map(card => (
           <div key={card.id} className={p.card}>
             <img src={card.image} alt="#" />
@@ -121,6 +124,7 @@ const Private = () => {
           </div>
         </div>
       )}
+      <button className={p.add_btn}>Добавить событие</button> 
     </div>
   );
 }

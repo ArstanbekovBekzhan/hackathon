@@ -1,29 +1,42 @@
-.Details{
+.containerDetail {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .Details {
     display: flex;
     justify-content: space-between;
-}
-.Details .left, .right {
-    width: 45%;
+    flex-wrap: wrap;
+  }
+  
+  .Details .left,
+  .Details .right {
+    width: 100%;
     height: 100%;
     color: #fff;
     text-shadow: 1px 1px 1px black;
-}
-.left img{
-    width: 100%;
+  }
+  
+  .left img {
+    width: 95%;
     height: 100%;
     border-radius: 20px;
     box-shadow: 5px 5px 5px black;
-}
-.ContentDetails{
+  }
+  
+  .ContentDetails {
     padding: 5vw;
-}
-.Black{
+    padding-top: 10px;
+  }
+  
+  .Black {
     position: fixed;
     top: 50vh;
     left: 2px;
     z-index: 2;
-}
-.Black button{
+  }
+  
+  .Black button {
     border-radius: 5px;
     box-shadow: 3px 3px 2px black;
     width: 60px;
@@ -31,9 +44,51 @@
     background: url("../../Galilee/back.jpg");
     background-position: center center;
     background-size: cover;
-}
-
-.title_comment {
+  }
+  
+  .box_comment {
+    background-color: rgb(16, 77, 121);
+    box-shadow: 5px 5px 5px 5px black;
+    width: 100%;
+  }
+  
+  .title_comment {
     color: white;
-    margin: 10px;
-}
+    padding: 10px;
+    text-align: center;
+    font-style: oblique;
+  }
+  
+  @media (min-width: 1105px) {
+    .Details .left,
+    .Details .right {
+      width: 50%;
+      padding-top: 10px;
+    }
+  }
+
+
+  
+  @media (min-width: 1200px) {
+    .containerDetail {
+      margin-top: 30px;
+    }
+  
+    .ContentDetails {
+      padding: 3vw;
+    }
+  
+    .Black button {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .box_comment {
+      padding: 10px;
+    }
+  
+    .title_comment {
+      padding: 15px;
+    }
+  }
+  
