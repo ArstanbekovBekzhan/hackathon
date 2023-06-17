@@ -29,14 +29,12 @@
 }
 
 .red_box {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 2px black solid;
-    border-radius: 20px;
     width: 80%;
     height: 6em;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+    border: none;
     margin-bottom: 50px;
 }
 
@@ -50,22 +48,13 @@
     transition: 1s;
 }
 
-.red_circle {
-    width: 20%;
-    height: 50%;
-    background-color: red;
-    border-radius: 50%;
-}
-
 .green_box {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 2px black solid;
-    border-radius: 20px;
     width: 80%;
     height: 6em;
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+    border: none;
     margin-bottom: 50px; 
 }
 
@@ -79,29 +68,24 @@
     transition: 1s;
 }
 
-.green_circle {
-    width: 20%;
-    height: 50%;
-    background-color: green;
-    border-radius: 50%;
-}
-
 .card_desk {
     width: 80%;
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; */
     /* justify-content: space-between; */
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .add_btn {
-    cursor: pointer;
+    width: 190px;
+    height: 50px;
     color: white;
     background-color: blue;
     border-radius: 20px;
     border: none;
-    width: 190px;
-    height: 50px;
     margin: 0 auto;
 }
 
@@ -132,4 +116,30 @@
 
 form textarea {
     resize: none;
+
+}
+
+.card {
+    position: relative;
+    width: 440px;
+    text-align: center;
+    background: orangered;
+    border-radius: 20px;
+    margin: 30px 0;
+    text-decoration: none;
+    color: black;
+}
+
+.card img {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 300px;
+
+}
+.made img {
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
