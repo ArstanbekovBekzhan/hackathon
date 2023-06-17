@@ -231,11 +231,6 @@
     }
   ],
   "users": [
-    {
-      "email": "sdfgh@mail.ru",
-      "password": "$2a$10$bT6b7nLUaRVLvdnxVxqVHeS4DmSXJ/TivIgh4RjHeRyOJJPHwO.3G",
-      "id": 1
-    }
   ],
   "publicServices": [
     {
@@ -290,4 +285,3 @@
     }
   ]
 }
-
