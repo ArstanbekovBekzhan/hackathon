@@ -5,7 +5,8 @@
     width: 100%;
 }
 .Card{
-    width: 30vw;
+    position: relative;
+    width: 440px;
     text-align: center;
     background: orangered;
     border: 2px solid black;
@@ -34,4 +35,11 @@
 }
 .Nik h4{
     font-size: 15px;
+}
+.made img{
+    width: 55px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
