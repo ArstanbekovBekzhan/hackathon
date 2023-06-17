@@ -8,12 +8,13 @@ const Layout = () => {
 
   const handleHeaderHeight = (height) => {
     setHeaderHeight(height);
+    console.log(height);
   };
 
   return (
     <>
       <Header onHeaderHeight={handleHeaderHeight} />
-      <main className="container" style={{ marginTop: headerHeight, backgroundColor: 'brown' }}>
+      <main className="container1" style={{ marginTop: headerHeight, backgroundColor: 'brown' }}>
        <Outlet />
       </main>
       <Footer />
