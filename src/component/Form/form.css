@@ -8,10 +8,15 @@
 .form {
   color: white;
   min-width: 400px;
-  width: 100%;
+  width: 50%;
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.form_email {
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .form_title {
@@ -42,4 +47,17 @@
   color: #fff;
 
 
+}
+ 
+.form_password {
+  position: relative;
+}
+
+.form_eye {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  cursor: pointer;
+  z-index: 10;
 }
