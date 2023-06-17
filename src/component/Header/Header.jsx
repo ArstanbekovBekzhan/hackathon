@@ -71,6 +71,9 @@ const Header = ({ onHeaderHeight }) => {
               <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
                 Личный кабинет
               </Link>
+              <Link to="/admin" className="nav-link" onClick={() => setExpanded(false)}>
+                Админ кабинет
+              </Link>
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   <NavDropdown.Item key={service.eng}>

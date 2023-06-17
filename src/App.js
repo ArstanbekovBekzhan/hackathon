@@ -4,6 +4,7 @@ import { Homepage } from './pages/Home/Homepage.jsx';
 import { CardDetails } from './pages/Details/Details';
 import { Layout } from './component/Layout/Layout.jsx';
 import { Private } from './component/PrivateCabinet/Private.jsx'
+import { Admin } from './component/Admin/admin.jsx';
 import { Register } from './pages/Register'
 import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/cards/:id" element={<CardDetails />} />
           <Route path="/Categories/:serviceEng/:id" element={<PublicServicesDynamic/>} />
           <Route path="/Private" element={<Private />} />
+          <Route path="/Admin" element={<Admin />} />
         </Route>
       </Routes>
     </>
