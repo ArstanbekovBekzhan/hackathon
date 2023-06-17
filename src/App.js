@@ -15,7 +15,7 @@ function App() {
           <Route index element={<Homepage />} />
           <Route path="/register" element={<Register />}/>
           <Route path="/cards/:id" element={<CardDetails />} />
-          <Route path="/Categories/:serviceEng" element={<PublicServicesDynamic />} />
+          <Route path="/Categories/:serviceEng/:id" element={<PublicServicesDynamic/>} />
           <Route path="/Private" element={<Private />} />
         </Route>
       </Routes>

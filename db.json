@@ -2,6 +2,7 @@
   "cards": [
     {
       "id": "1",
+      "tag": "BISHKEKSVET",
       "made": true,
       "Nick": "Нурик",
       "Nick_image": "https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg",
@@ -24,6 +25,7 @@
     },
     {
       "id": "2",
+      "tag": "STATE_AGENCY_OF_ARCHITECTURE",
       "made": false,
       "Nick": "Марина",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg",
@@ -47,6 +49,7 @@
     {
       "id": "3",
       "made": true,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Алексей",
       "Nick_image": "https://avatarzo.ru/wp-content/uploads/category_animals_300x300.jpg",
       "title": "Пешеходный переход",
@@ -69,6 +72,7 @@
     {
       "id": "4",
       "made": true,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Елена",
       "Nick_image": "https://aminosart.ru/wp-content/uploads/2021/04/Krutye-avatarki-swag-18.jpg",
       "title": "Светофор",
@@ -91,6 +95,7 @@
     {
       "id": "5",
       "made": false,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Иван",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551512888_2.jpg",
       "title": "Дорожные ямы",
@@ -113,6 +118,7 @@
     {
       "id": "6",
       "made": true,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Ольга",
       "Nick_image": "https://media.licdn.com/dms/image/C4E03AQHI2QIVppwUDQ/profile-displayphoto-shrink_800_800/0/1598966701723?e=2147483647&v=beta&t=FX-wMZ3LI2-Xji4RlnO8Og5g_li9fo25vkm1TEKOoKg",
       "title": "Остановка общественного транспорта",
@@ -135,6 +141,7 @@
     {
       "id": "7",
       "made": false,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Дмитрий",
       "Nick_image": "https://i.mycdn.me/i?r=AzHTJbfR1Z1DrzAcrKsnwlx-qG46nZB1Fj-8cF5kDCK67fcaXBpRGVJKjLLc0JH11no",
       "title": "Отсутствие тротуаров",
@@ -154,10 +161,10 @@
         }
       ]
     },
-    
    {
   "id": "8",
   "made": true,
+  "tag": "BISHKEKSVET",
   "Nick": "Максим",
   "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
   "title": "Отсутствие уличного освещения",
@@ -179,6 +186,7 @@
     {
       "id": "9",
       "made": false,
+      "tag": "TAZALYK",
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "Nick": "Екатерина",
       "title": "Проблема мусора на дорогах",
@@ -201,6 +209,7 @@
     {
       "id": "10",
       "made": true,
+      "tag": "WATER_SUPPLY_AND_SANITATION",
       "Nick": "Екатерина",
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "title": "Отсутствие доступа к воде",
@@ -233,7 +242,7 @@
       "id": "1",
       "eng": "TAZALYK",
       "Name": "Тазалык",
-      "Nick_image": "https://bishkek.gov.kg/assets/img/company/1530165110_medium.jpeg",
+      "image": "https://bishkek.gov.kg/assets/img/company/1530165110_medium.jpeg",
       "number": "34-51-02 (приемная)",
       "text": "Муниципальное предприятие осуществляет коммунальное  обслуживание по санитарной очистке городской территории, содержание городских дорог.",
       "location": "ул. Ростовская №19б",
@@ -243,7 +252,7 @@
       "id": "2",
       "eng": "MINISTRY_OF_TRANSPORTATION",
       "Name": "Министерство транспорта",
-      "Nick_image": "",
+      "image": "https://st-1.akipress.org/st_gallery/70/1323470.f2bda59559d6b7bf06323276520bd8b3.jpg",
       "number": "+996(312) 314236",
       "text": "Департамент дорожного хозяйства (или Департамент дорожного строительства и эксплуатации дорог) - это организация или структурное подразделение, которое отвечает за планирование, строительство, ремонт и обслуживание дорог и транспортной инфраструктуры на определенной территории",
       "location": "г. Бишкек, ул. Исанова 42, Кыргызская Республика",
@@ -253,7 +262,7 @@
       "id": "3",
       "eng": "STATE_AGENCY_OF_ARCHITECTURE",
       "Name": "Государственное агентсво архетиктуры",
-      "Nick_image": "",
+      "image": "https://gosstroy.gov.kg/wp-content/themes/gs-theme/images/logo_gosstroy.png",
       "number": "(0312) 31-29-22",
       "text": "Государственное агентство архитектуры, строительства и жилищно-коммунального хозяйства при Кабинете Министров Кыргызской Республики (ГААСЖКХ) является государственным органом, ответственным за разработку и реализацию политики в области архитектуры, строительства и жилищно-коммунального хозяйства в Кыргызстане.",
       "location": "28 просп. Манаса",
@@ -262,8 +271,8 @@
     {
       "id": "4",
       "eng": "BISHKEKSVET",
-      "Name": "БишкекСвет",
-      "Nick_image": "",
+      "Name": "Бишкек Свет",
+      "image": "https://economist.kg/content/images/size/w1000/format/webp/wp-content/uploads/2022/02/dizain-bez-nazvaniya-11.png",
       "number": "0 312 650815 (приемная)",
       "text": "Муниципальное предприятие «Бишкексвет» является структурным подразделением мэрии г.Бишкек.",
       "location": "Жоомарта Боконбаева, №232",
@@ -273,7 +282,7 @@
       "id": "5",
       "eng": "WATER_SUPPLY_AND_SANITATION",
       "Name": "Водоснабжение и водоотведение",
-      "Nick_image": "",
+      "image": "https://knews.kg/wp-content/uploads/2018/01/7954f2ea9b7dbde48023e1d7c9277116.jpg",
       "number": " +996 555 520 521",
       "text": "Водоснабжение и водоотведение - это сфера деятельности, связанная с обеспечением населения, предприятий и общественных объектов качественной питьевой водой и управлением стоками использованной воды и сточных вод.",
       "location": "2 кампус КГТУ им. Раззакова, ул. Малдыбаева Б 34, г. Бишкек",

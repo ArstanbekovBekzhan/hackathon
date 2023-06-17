@@ -13,7 +13,7 @@ const Layout = () => {
   return (
     <>
       <Header onHeaderHeight={handleHeaderHeight} />
-      <main className="container1" style={{ marginTop: headerHeight }}>
+      <main className="container1" style={{ marginTop: headerHeight ,}}>
         <Outlet />
       </main>
       <Footer />

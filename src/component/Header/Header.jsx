@@ -74,7 +74,7 @@ const Header = ({ onHeaderHeight }) => {
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   <NavDropdown.Item key={service.eng}>
-                    <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}`}>
+                    <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}/${service.id}`}>
                       {service.Name}
                     </Link>
                   </NavDropdown.Item>

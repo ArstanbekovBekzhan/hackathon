@@ -1,5 +1,4 @@
 .containerDetail {
-    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -27,7 +26,6 @@
   
   .ContentDetails {
     padding: 7vw;
-    margin-top: 20px;
   }
   
   .Black {
@@ -50,7 +48,7 @@
   .box_comment {
     background-color: rgb(16, 77, 121);
     box-shadow: 5px 5px 5px 5px black;
-  }
+}
   
   .title_comment {
     color: white;
