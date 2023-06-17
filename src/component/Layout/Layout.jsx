@@ -14,12 +14,12 @@ const Layout = () => {
   return (
     <>
       <Header onHeaderHeight={handleHeaderHeight} />
-      <main className="container1" style={{ marginTop: headerHeight, backgroundColor: 'brown' }}>
-       <Outlet />
+      <main className="container1" style={{ marginTop: headerHeight*1000, backgroundColor: 'brown' }}>
+        <Outlet />
       </main>
       <Footer />
     </>
   );
 };
 
-export { Layout };
+export  { Layout };
