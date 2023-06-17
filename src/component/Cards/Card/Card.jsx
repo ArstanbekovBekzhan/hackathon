@@ -3,9 +3,11 @@ import Erros from "../../../Galilee/errors.png";
 import { NavLink } from "react-router-dom";
 
 const Card = ({ cards }) => (
-      <div className={SCard.Cards} >
+      <div className={SCard.Cards}>
          {cards.map(card => (
-          <NavLink  className={SCard.Card} key={card.id} to={`/cards/${card.id}`}>
+          <NavLink  
+          style={{ backgroundColor: card.made ? 'green' : 'red' }}
+           className={SCard.Card} key={card.id} to={`/cards/${card.id}`}>
           <div>
           <img src={card.image || Erros } alt="#" />
           </div>
