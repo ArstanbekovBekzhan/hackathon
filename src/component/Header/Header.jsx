@@ -44,6 +44,9 @@ const Header = () => {
               <Link to="/contact" className="nav-link" onClick={() => setExpanded(false)}>
                 Войти/Зарегистрироваться 
               </Link>
+              <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
+                Личный кабинет
+              </Link>
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   <NavDropdown.Item key={service.id} href="#">
