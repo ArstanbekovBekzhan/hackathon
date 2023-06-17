@@ -26,4 +26,42 @@
     color: white;
     font-style: italic;
   }
+
+  .commentForm {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 20px;
+  }
+  
+  .commentInput {
+    padding: 8px;
+    border: 1px solid  rgb(16, 77, 121);
+    border-radius: 4px;
+    margin-bottom: 10px; 
+    background-color: #eef2f5;
+    color: #0e1210;
+  }
+
+  .commentInput:focus:active{
+    border: none;
+  }
+  
+  .commentButton {
+    padding: 8px 16px;
+    background-color: #26b553;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .commentButton:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 600px) {
+    .commentInput {
+      margin-right: 0; 
+    }
+  }
   
