@@ -4,7 +4,6 @@ import './form.css'
 import { FaPencilAlt } from 'react-icons/fa'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import axios from "axios";
-
 const Form = () => {
 
   const [status, setStatus] = useState(false)
