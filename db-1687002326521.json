@@ -156,13 +156,13 @@
     },
     {
       "id": "8",
+      "made": true,
       "Nick": "Максим",
       "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
       "title": "Отсутствие уличного освещения",
       "text": "В ночное время это место становится полной темнотой. Отсутствие уличного освещения создает небезопасную обстановку и вызывает чувство беспокойства. Я не могу понять, почему не установили фонари?",
       "image": "https://kolodischi.by/piximage/wm/L3BpeGltYWdlL3Jlc2l6ZS82ODR4Ki9zdG9yYWdlL3VwbG9hZGVkL2FlYzRmNzRmNjZkMjFmZmFmMzJkOTBiZWI0YWNlOWFjLmpwZw==.jpg",
-      "location": "Ахунбаева улица, дом 89",
-      "made": true
+      "location": "Ахунбаева улица, дом 89"
     },
     {
       "id": "9",
@@ -208,6 +208,15 @@
         }
       ]
     }
+  ],
+  "User-exam": [
+    {
+      "id": "1",
+      "Name": "Транском",
+      "Nick_image": "https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg",
+      "title": "Фонарь",
+      "text": "Мусорная служба",
+      "location": "10мкр, 22 дом"
+    }
   ]
 }
-
