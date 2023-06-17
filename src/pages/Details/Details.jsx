@@ -75,7 +75,7 @@ const CardDetails = () => {
         </div>
       )}
       <div>
-        <div>кометарий</div>
+      <h1 className={SDCard.title_comment}>Коментарий</h1>
         <Comment cardId={id} />
       </div>
     </div>
