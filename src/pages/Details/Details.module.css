@@ -26,8 +26,8 @@
   }
   
   .ContentDetails {
-    padding: 7vw;
-    margin-top: 20px;
+    padding: 5vw;
+    padding-top: 10px;
   }
   
   .Black {
@@ -50,6 +50,7 @@
   .box_comment {
     background-color: rgb(16, 77, 121);
     box-shadow: 5px 5px 5px 5px black;
+    width: 100%;
   }
   
   .title_comment {
