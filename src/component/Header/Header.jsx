@@ -52,7 +52,7 @@ const Header = () => {
                 {publicServices.map((service) => (
                   
                   <NavDropdown.Item>
-                     <Link className="list-group-item list-group-item-action" to={`/Categories/${service.eng}`} key={service}>
+                     <Link aria-controls="responsive-navbar-nav" to={`/Categories/${service.eng}`} key={service}>
                        {service.Name}
                      </Link>
                   </NavDropdown.Item>
