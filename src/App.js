@@ -8,6 +8,7 @@ import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
 import Registration from './pages/auth/Registration';
 import Login from './pages/auth/Login';
 import { Admin } from './component/Admin/admin.jsx';
+import { Layout } from './component/Layout/Layout';
 
 function App() {
   return (

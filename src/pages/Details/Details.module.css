@@ -70,19 +70,8 @@
   font-size: 20px;
   font-weight: bold;
 }
-.cc textarea{
-  height: 200px;
-}
-.cc2{
-  display: flex;
-  justify-content: space-between;
-}
-.answer{
 
-}
-.answer img{
-width: 100px;
-}
+
 @media (min-width: 1105px) {
   .Details .left,
   .Details .right {
