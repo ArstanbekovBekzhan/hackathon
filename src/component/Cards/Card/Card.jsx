@@ -6,7 +6,7 @@ const Card = ({ cards }) => (
       <div className={SCard.Cards}>
          {cards.map(card => (
           <NavLink  
-          style={{ backgroundColor: card.made ? 'green' : 'red' }}
+          style={{ backgroundColor: card.made ? '#597824' : 'red' }}
            className={SCard.Card} key={card.id} to={`/cards/${card.id}`}>
           <div>
           <img src={card.image || Erros } alt="#" />
