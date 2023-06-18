@@ -99,8 +99,8 @@ const Registration = () => {
         </label>
         <label>
           <input
-            className={styles.input_photo}
-            type="file"
+            className={styles.ph_ph}
+            type ="file"
             placeholder='Фото'
             accept="image/*"
             onChange={handleFileChange}
