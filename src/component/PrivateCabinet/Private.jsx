@@ -21,10 +21,10 @@ const Private = () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      // Redirect to another page if the token is missing
       navigate('/login');
     }
   }, [navigate]);
+
   const modalRef = useRef(null);
 
   const handleToggle = (value) => {
@@ -45,11 +45,20 @@ const Private = () => {
     setTag('');
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      setImage(dataURL);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const newCard = {
-      id: (cards.length + 1).toString(),
       made: false,
       Nick: 'Your Name',
       Nick_image: 'https://example.com/your-image.jpg',
@@ -60,15 +69,20 @@ const Private = () => {
       comments: [],
     };
 
-    const updatedCards = [...cards, newCard];
-    setCards(updatedCards);
+    try {
+      const response = await axios.post('http://localhost:3000/cards', newCard);
+      const createdCard = response.data;
+      setCards([...cards, createdCard]);
 
-    setImage('');
-    setTitle('');
-    setDescription('');
-    setAddress('');
-    setTag('');
-    setShowModal(false);
+      setImage('');
+      setTitle('');
+      setDescription('');
+      setAddress('');
+      setTag('');
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error adding card:', error);
+    }
   };
 
   useEffect(() => {
@@ -86,11 +100,9 @@ const Private = () => {
   }, [done]);
 
   useEffect(() => {
-    // Simulating fetching publicServices data
     const simulatedFetchData = async () => {
       try {
-        // Replace this with your actual API endpoint to fetch publicServices
-        const response = await axios.get(`http://localhost:3000/publicServices`);
+        const response = await axios.get('http://localhost:3000/publicServices');
         setPublicServices(response.data);
       } catch (error) {
         console.log(error);
@@ -117,13 +129,14 @@ const Private = () => {
       document.removeEventListener('click', handleClickOutsideModalContent);
     };
   }, []);
+
   const Username = localStorage.getItem('Username');
   const IMG = localStorage.getItem('IMG');
 
   return (
     <div className={p.container}>
       <div className={p.user_box}>
-        <img src={IMG} alt="#" />
+        <img src="https://aminosart.ru/wp-content/uploads/2021/04/Krutye-avatarki-swag-18.jpg" alt="#" />
         <h2 className={p.name}>{Username}</h2>
         <button className={p.green_box} onClick={() => handleToggle(true)}>
           Выполнено
@@ -156,9 +169,8 @@ const Private = () => {
               </span>
               <input
                 type="file"
-                placeholder="Картинка"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
+                accept="image/*"
+                onChange={handleFileChange}
               />
               <input
                 type="text"
@@ -194,4 +206,4 @@ const Private = () => {
   );
 };
 
-export default Private ;
+export default Private;

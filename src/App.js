@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import "./App.css"
-import {Layout} from "./component/Layout/Layout"
 import { Homepage } from './pages/Home/Homepage.jsx';
 import { CardDetails } from './pages/Details/Details';
 import Private from './component/PrivateCabinet/Private.jsx'
@@ -8,6 +7,7 @@ import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
 import Registration from './pages/auth/Registration';
 import Login from './pages/auth/Login';
 import { Admin } from './component/Admin/admin.jsx';
+import { Layout } from './component/Layout/Layout';
 
 
 function App() {
