@@ -15,8 +15,10 @@ const CardDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState({
     type: '',
-    description: ''
+    description: '',
+    photo: null
   });
+  const [answerImage, setAnswerImage] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -62,29 +64,51 @@ const CardDetails = () => {
     setShowModal(false);
     setModalData({
       type: '',
-      description: ''
+      description: '',
+      photo: null
     });
+    setAnswerImage(null);
   };
 
   const handleModalInputChange = (e) => {
-    setModalData({
-      ...modalData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value, files } = e.target;
+    if (name === 'photo') {
+      setModalData((prevData) => ({
+        ...prevData,
+        photo: files[0],
+      }));
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setAnswerImage(e.target.result);
+      };
+      reader.readAsDataURL(files[0]);
+    } else {
+      setModalData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   const handleModalSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/cards/${id}`, {
-        ...card,
-        answer: modalData.type,
-        answertext: modalData.description
+      const formData = new FormData();
+      formData.append('type', modalData.type);
+      formData.append('description', modalData.description);
+      formData.append('answer_img', modalData.photo);
+
+      await axios.put(`http://localhost:3000/cards/${id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       });
-      setCard(prevCard => ({
+      setCard((prevCard) => ({
         ...prevCard,
         answer: modalData.type,
-        answertext: modalData.description
+        answer_text: modalData.description,
+        answer_img: answerImage
       }));
     } catch (error) {
       console.error('Error updating card:', error);
@@ -96,11 +120,11 @@ const CardDetails = () => {
     try {
       await axios.put(`http://localhost:3000/cards/${id}`, {
         ...card,
-        made: true,
+        made: true
       });
-      setCard(prevCard => ({
+      setCard((prevCard) => ({
         ...prevCard,
-        made: true,
+        made: true
       }));
     } catch (error) {
       console.error('Error updating card:', error);
@@ -128,41 +152,55 @@ const CardDetails = () => {
               <h2>{card.title}</h2>
               <p>{card.text}</p>
               <h4>{address}</h4>
-              <Button onClick={handleModalOpen}>Добавить</Button>
-              {showModal && (
-                <Modal show={showModal} onHide={handleModalClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Модальное окно</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <form onSubmit={handleModalSubmit}>
-                      <div className={SDCard.cc}>
-                        <input
-                          type="text"
-                          name="type"
-                          placeholder="Тип"
-                          value={modalData.type}
-                          onChange={handleModalInputChange}
-                        />
-                        <textarea
-                          name="description"
-                          placeholder="Описание"
-                          value={modalData.description}
-                          onChange={handleModalInputChange}
-                        ></textarea>
-                      </div>
-                    </form>
-                  </Modal.Body>
-                  <Modal.Footer className={SDCard.cc2}>
-                    <Button variant="secondary" onClick={handleModalClose}>
-                      Отменить
-                    </Button>
-                    <Button variant="primary" onClick={updateCardMade}>
-                      Сохранить
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-              )}
+              {
+                !card.made ? <div> <Button onClick={handleModalOpen}>Добавить</Button>
+                {showModal && (
+                  <Modal show={showModal} onHide={handleModalClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Модальное окно</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <form onSubmit={handleModalSubmit}>
+                        <div className={SDCard.cc}>
+                          <input
+                            type="text"
+                            name="type"
+                            placeholder="Тип"
+                            value={modalData.type}
+                            onChange={handleModalInputChange}
+                          />
+                          <textarea
+                            name="description"
+                            placeholder="Описание"
+                            value={modalData.description}
+                            onChange={handleModalInputChange}
+                          ></textarea>
+                          <input
+                            type="file"
+                            name="photo"
+                            onChange={handleModalInputChange}
+                          />
+                          {answerImage && (
+                            <img src={answerImage} alt="Answer" />
+                          )}
+                        </div>
+                      </form>
+                    </Modal.Body>
+                    <Modal.Footer className={SDCard.cc2}>
+                      <Button variant="secondary" onClick={handleModalClose}>
+                        Отменить
+                      </Button>
+                      <Button variant="primary" onClick={updateCardMade}>
+                        Сохранить
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+                )}</div> : <div className={SDCard.answer}>
+                  <h4>{card.answer}</h4>
+                  <p>{card.answer_text}</p>
+                  <img src={card.answer_img} alt="" />
+                </div>
+              }
             </div>
           </div>
           <CardMap address={address} />

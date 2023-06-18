@@ -77,6 +77,12 @@
   display: flex;
   justify-content: space-between;
 }
+.answer{
+
+}
+.answer img{
+width: 100px;
+}
 @media (min-width: 1105px) {
   .Details .left,
   .Details .right {
