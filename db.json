@@ -31,7 +31,7 @@
       "answer_text": "dadawd",
       "answer_img": "",
       "tag": "STATE_AGENCY_OF_ARCHITECTURE",
-      "made": true,
+      "made": false,
       "Nick": "Марина",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg",
       "title": "Дом",
@@ -57,7 +57,7 @@
       "answer": "",
       "answer_text": "",
       "answer_img": "",
-      "made": true,
+      "made": false,
       "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Алексей",
       "Nick_image": "https://avatarzo.ru/wp-content/uploads/category_animals_300x300.jpg",
@@ -260,7 +260,7 @@
     }
   ],
   "registration": [
-    
+
   ],
   "publicServices": [
     {
