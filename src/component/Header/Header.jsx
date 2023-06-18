@@ -76,8 +76,8 @@ const Header = ({ onHeaderHeight }) => {
                 Главная
               </Link>
               {!hasToken && (
-                <Link to="/register" className="nav-link" onClick={() => setExpanded(false)}>
-                  Регистрация
+                <Link to="/login" className="nav-link" onClick={() => setExpanded(false)}>
+                  Войти
                 </Link>
               )}
               {hasToken && (

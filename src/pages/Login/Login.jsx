@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import './Login.css'
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -26,22 +27,23 @@ function Login() {
   };
 
   return (
-    <Container>
-      <Row className="justify-content-center mt-5">
-        <Col xs={10} sm={8} md={6} lg={4}>
-          <h2 className="text-center">Авторизация</h2>
+    <Container className='log_box'>
+      <Row className="justify-content-center">
+        <Col>
+          <h2 className="text-center">Вход</h2>
           <Form>
             <Form.Group controlId="formUsername">
-              <Form.Label>Имя пользователя</Form.Label>
-              <Form.Control type="text" placeholder="Введите имя пользователя" value={username} onChange={handleUsernameChange} />
+              <Form.Label></Form.Label>
+              <Form.Control className='block' type="text" placeholder="Введите имя пользователя" value={username} onChange={handleUsernameChange} />
             </Form.Group>
 
             <Form.Group controlId="formPassword">
-              <Form.Label>Пароль</Form.Label>
-              <Form.Control type="password" placeholder="Введите пароль" value={password} onChange={handlePasswordChange} />
+              <Form.Label></Form.Label>
+              <Form.Control className='block' type="password" placeholder="Введите пароль" value={password} onChange={handlePasswordChange} />
             </Form.Group>
 
-            <Button variant="primary" block onClick={handleLogin}>Войти</Button>
+            <Button className='log_btn' variant="primary" onClick={handleLogin}>Войти</Button>
+            <p className='auth1-p' >Нет аккаунта? <Link className='registr' to="/register">Зарегистрируйся</Link></p>
           </Form>
         </Col>
       </Row>

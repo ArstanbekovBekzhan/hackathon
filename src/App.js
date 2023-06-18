@@ -6,7 +6,7 @@ import { Layout } from './component/Layout/Layout.jsx';
 import Private from './component/PrivateCabinet/Private.jsx'
 import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
 import Registration from './pages/auth/Registration';
-import Login from './pages/auth/Login';
+import Login from './pages/Login/Login';
 import { Admin } from './component/Admin/admin.jsx';
 
 function App() {
