@@ -88,7 +88,6 @@ const Header = ({ onHeaderHeight }) => {
 
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
-                  
                   <NavDropdown.Item>
                      <Link aria-controls="responsive-navbar-nav" to={`/Categories/${service.eng}`} key={service}>
                        {service.Name}
