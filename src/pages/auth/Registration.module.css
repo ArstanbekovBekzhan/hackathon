@@ -93,4 +93,13 @@
     margin-top: 10px;
     text-align: center;
   }
+
+  @media screen and  (max-width: 450px) {
+    .log_box {
+      width: 80% !important
+      ;
+      height: 80% !important
+      ;
+  }
+  };
   
