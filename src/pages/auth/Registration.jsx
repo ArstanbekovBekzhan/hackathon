@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
@@ -27,7 +27,7 @@ const Registration = () => {
 
     if (token) {
       // Redirect to another page or show an error message
-      navigate('/blocked');
+      navigate('/login');
     }
   }, [navigate]);
 
@@ -57,7 +57,7 @@ const Registration = () => {
     try {
       const response = await axios.post('http://localhost:3000/registration', registrationData);
       console.log('Registration successful:', response.data);
-      navigate('/login'); // Перенаправление на страницу "Login" после успешной регистрации
+      navigate('/private'); // Перенаправление на страницу "Login" после успешной регистрации
     } catch (error) {
       console.log('Registration failed:', error);
     }
@@ -77,11 +77,12 @@ const Registration = () => {
 
   return (
     <div className={styles.container}>
-      <h2>Registration</h2>
+      <h2 className={styles.title}>Registration</h2>
       <form className={styles.form}>
         <label>
           Username:
           <input
+            className={styles.input}
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -90,6 +91,7 @@ const Registration = () => {
         <label>
           Password:
           <input
+            className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -98,6 +100,7 @@ const Registration = () => {
         <label>
           Photo:
           <input
+            className={styles.input}
             type="file"
             accept="image/*"
             onChange={handleFileChange}
@@ -106,6 +109,7 @@ const Registration = () => {
         <label>
           Phone:
           <input
+            className={styles.input}
             type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -114,16 +118,17 @@ const Registration = () => {
         <label>
           Email:
           <input
+            className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <button type="button" onClick={handleRegistration}>
+        <button className={styles.button} type="button" onClick={handleRegistration}>
           Register
         </button>
         <p>
-          Already have an account? <a href="/">Login</a>
+          Already have an account? <a href="http://localhost:3001/login">Login</a>
         </p>
       </form>
     </div>

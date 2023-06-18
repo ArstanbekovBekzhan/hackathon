@@ -3,12 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = ({ onHeaderHeight }) => {
   const [expanded, setExpanded] = useState(false);
   const [publicServices, setPublicServices] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setExpanded(!expanded);
@@ -39,7 +40,16 @@ const Header = ({ onHeaderHeight }) => {
     handleHeaderHeight();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const hasToken = localStorage.getItem('token'); // Check if token exists in localStorage
+
+  const hasToken = localStorage.getItem('token');
+  const Username = localStorage.getItem('Username');
+  const IMG = localStorage.getItem('IMG');
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/');
+  };
+
   useEffect(() => {
     const handleResize = () => {
       handleHeaderHeight();
@@ -50,7 +60,7 @@ const Header = ({ onHeaderHeight }) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [location.pathname]); // Trigger on pathname change
+  }, [location.pathname]);
 
   return (
     <>
@@ -70,14 +80,12 @@ const Header = ({ onHeaderHeight }) => {
                   Регистрация
                 </Link>
               )}
-              {(
-                hasToken &&(
-                  <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
-                Личный кабинет
-              </Link>
-                )
+              {hasToken && (
+                <Link to="/private" className="nav-link" onClick={() => setExpanded(false)}>
+                  Личный кабинет
+                </Link>
               )}
-              
+
               <NavDropdown title="Общественные службы" id="public-services-dropdown">
                 {publicServices.map((service) => (
                   <NavDropdown.Item key={service.eng}>
@@ -89,6 +97,13 @@ const Header = ({ onHeaderHeight }) => {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
+          {hasToken && (
+            <div className="users">
+              <img src={IMG} alt="User" />
+              <h2>{Username}</h2>
+              <button onClick={handleLogout}>Выход</button>
+            </div>
+          )}
         </Container>
       </Navbar>
     </>

@@ -3,4 +3,9 @@
     transition: max-height 0.3s ease-in-out;
     max-height: 0;
   }
-  
+  .users img{
+    height: 40px;
+  }
+  .users{
+    color: #fff;
+  }

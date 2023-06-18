@@ -101,12 +101,14 @@ const Private = () => {
       document.removeEventListener('click', handleClickOutsideModalContent);
     };
   }, []);
+  const Username = localStorage.getItem('Username');
+  const IMG = localStorage.getItem('IMG');
 
   return (
     <div className={p.container}>
       <div className={p.user_box}>
-        <img src="https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg" alt="#" />
-        <h2 className={p.name}>Johnatan</h2>
+        <img src={IMG} alt="#" />
+        <h2 className={p.name}>{Username}</h2>
         <button className={p.green_box} onClick={() => handleToggle(true)}>
           Выполнено
         </button>
