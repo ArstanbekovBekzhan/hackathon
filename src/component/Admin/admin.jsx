@@ -65,7 +65,7 @@ const Admin = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/cards');
-        const filteredCards = response.data.filter((card) => card.made === done);
+        const filteredCards = response.data.filter((card) => card.made === done && card.tag === 'MINISTRY_OF_TRANSPORTATION');
         setCards(filteredCards);
       } catch (error) {
         console.log(error);
@@ -96,8 +96,8 @@ const Admin = () => {
   return (
     <div className={a.container}>
       <div className={a.user_box}>
-        <img src="https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg" alt="#" />
-        <h2 className={a.name}>Johnatan</h2>
+        <img src="https://st-1.akipress.org/st_gallery/70/1323470.f2bda59559d6b7bf06323276520bd8b3.jpg" alt="#" />
+        <h2 className={a.name}>Министерство транспорта</h2>
         <button className={a.green_box} onClick={() => handleToggle(true)}>
           Выполнено
         </button>

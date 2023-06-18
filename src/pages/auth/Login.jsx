@@ -8,10 +8,10 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const correctUsername = 'username';
-    const correctPassword = 'password';
+    const correctUsername = 'Министерство транспорта';
+    const correctPassword = 'MINISTRY_OF_TRANSPORTATION';
     if (username === correctUsername && password === correctPassword) {
-      navigate('/dev');
+      navigate('/admin');
     } else {
       window.location.reload();
     }
