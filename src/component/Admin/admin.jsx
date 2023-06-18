@@ -112,39 +112,16 @@ const Admin = () => {
             key={card.id}
             to={`/cards/${card.id}`}
           >
-            <div>
+            <div className={a.card}>
               <img src={card.image} alt="#" />
             </div>
             <div>
-              <h3>{card.title}</h3>
+              <h3 className={a.subtitle}>{card.title}</h3>
               <div></div>
             </div>
           </NavLink>
         ))}
       </div>
-      {showModal && (
-        <div className={a.modal}>
-          <div className={a.modal_content} ref={modalRef}>
-            <form onSubmit={handleFormSubmit}>
-              <span className={a.close} onClick={handleModalClose}>
-                &times;
-              </span>
-              <input
-                type="text"
-                placeholder="Добавьте название"
-                value={cardData.title}
-                onChange={(e) => setCardData({ ...cardData, title: e.target.value })}
-              />
-              <textarea
-                placeholder="Добавьте описание"
-                value={cardData.description}
-                onChange={(e) => setCardData({ ...cardData, description: e.target.value })}
-              ></textarea>
-              <button type="submit">Сохранить</button>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
