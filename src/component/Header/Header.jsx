@@ -99,9 +99,9 @@ const Header = ({ onHeaderHeight }) => {
           </Navbar.Collapse>
           {hasToken && (
             <div className="users">
-              <img src={IMG} alt="User" />
-              <h2>{Username}</h2>
-              <button onClick={handleLogout}>Выход</button>
+              <img style={{ width: '54px', height: '54px', objectFit: 'cover', borderRadius: '50%' }} src={IMG} alt="User" />
+              <h2 style={{ color: 'white' }}>{Username}</h2>
+              <button onClick={handleLogout} style={{ border: 'none', borderRadius: '5px' }}>Выход</button>
             </div>
           )}
         </Container>
