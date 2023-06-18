@@ -6,6 +6,7 @@ const Comment = ({ cardId }) => {
   const [commentIds, setCommentIds] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newComment, setNewComment] = useState('');
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     const fetchCommentIds = async () => {
@@ -23,13 +24,18 @@ const Comment = ({ cardId }) => {
     fetchCommentIds();
   }, [cardId]);
 
+  useEffect(() => {
+    const storedUserName = localStorage.getItem('Username');
+    setUserName(storedUserName || '');
+  }, []);
+
   const handleChange = (event) => {
     setNewComment(event.target.value);
   };
 
   const handleSubmit = async () => {
     try {
-      await addComment(cardId, 'Ваше имя', newComment);
+      await addComment(cardId, userName, newComment);
       setNewComment('');
 
       const response = await axios.get(`http://localhost:3000/cards/${cardId}`);

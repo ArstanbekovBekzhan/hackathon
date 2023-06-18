@@ -1,6 +1,5 @@
 .containerDetail {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .Details {
@@ -58,29 +57,10 @@
   text-align: center;
   font-style: oblique;
 }
-.cc{
-  display: flex;
-  flex-direction: column;
-}
-.cc *{
-  margin: 10px;
-}
-.cc input{
-  height: 50px;
-  font-size: 20px;
-  font-weight: bold;
-}
-.cc textarea{
-  height: 200px;
-}
-.cc2{
-  display: flex;
-  justify-content: space-between;
-}
 @media (min-width: 1105px) {
   .Details .left,
   .Details .right {
-    width: 50%;
+    width: 60%;
     padding-top: 10px;
   }
 }
