@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
 
@@ -76,59 +76,59 @@ const Registration = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Registration</h2>
+    <div className={styles.log_box}>
+      <h2 className={styles.title}>Регистрация</h2>
       <form className={styles.form}>
         <label>
-          Username:
           <input
             className={styles.input}
             type="text"
+            placeholder="Имя пользователя"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
         <label>
-          Password:
           <input
             className={styles.input}
             type="password"
+            placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <label>
-          Photo:
           <input
-            className={styles.input}
-            type="file"
+            className={styles.ph_ph}
+            type ="file"
+            placeholder='Фото'
             accept="image/*"
             onChange={handleFileChange}
           />
         </label>
         <label>
-          Phone:
           <input
             className={styles.input}
             type="text"
+            placeholder="Номер телефона"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
         </label>
         <label>
-          Email:
           <input
             className={styles.input}
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <button className={styles.button} type="button" onClick={handleRegistration}>
-          Register
+        <button className={styles.log_btn} type="button" onClick={handleRegistration}>
+          Зарегистрироваться
         </button>
         <p>
-          Already have an account? <a href="http://localhost:3001/login">Login</a>
+        Уже есть аккаунт? <a href="http://localhost:3001/login">Войти</a>
         </p>
       </form>
     </div>
