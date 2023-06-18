@@ -13,6 +13,7 @@ const Private = () => {
   const [address, setAddress] = useState('');
   const [tag, setTag] = useState('');
   const [subtitleVisible, setSubtitleVisible] = useState(true);
+  const [publicServices, setPublicServices] = useState([]);
 
   const navigate = useNavigate();
 
@@ -83,6 +84,21 @@ const Private = () => {
 
     fetchData();
   }, [done]);
+
+  useEffect(() => {
+    // Simulating fetching publicServices data
+    const simulatedFetchData = async () => {
+      try {
+        // Replace this with your actual API endpoint to fetch publicServices
+        const response = await axios.get(`http://localhost:3000/publicServices`);
+        setPublicServices(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    simulatedFetchData();
+  }, []);
 
   useEffect(() => {
     const handleClickOutsideModalContent = (event) => {
@@ -161,12 +177,14 @@ const Private = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
-              <input
-                type="radio"
-                placeholder="Напишите адрес"
-                value={tag}
-                onChange={(e) => setTag(e.target.value)}
-              />
+              <select value={tag} onChange={(e) => setTag(e.target.value)}>
+                <option value="">Выберите службу</option>
+                {publicServices.map((service) => (
+                  <option key={service.id} value={service.id}>
+                    {service.Name}
+                  </option>
+                ))}
+              </select>
               <button type="submit">Сохранить</button>
             </form>
           </div>
