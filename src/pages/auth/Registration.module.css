@@ -30,8 +30,8 @@
     width: 100%;
     height: 60px;
     margin-bottom: 30px;
-    /* display: flex;
-    text-align: center; */
+    display: flex;
+    text-align: center;
   
     background-color: #EEEEEE;
     font-family: 'Mulish', sans-serif;
@@ -63,7 +63,7 @@
 
   }
 
-  .input_photo::-webkit-file-upload-button {
+  .ph_ph::-webkit-file-upload-button {
     visibility: hidden;
   }
   
