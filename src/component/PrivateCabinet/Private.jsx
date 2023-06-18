@@ -24,6 +24,7 @@ const Private = () => {
       navigate('/login');
     }
   }, [navigate]);
+
   const modalRef = useRef(null);
 
   const handleToggle = (value) => {
@@ -44,11 +45,20 @@ const Private = () => {
     setTag('');
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      setImage(dataURL);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     const newCard = {
-      id: (cards.length + 1).toString(),
       made: false,
       Nick: 'Your Name',
       Nick_image: 'https://example.com/your-image.jpg',
@@ -59,15 +69,20 @@ const Private = () => {
       comments: [],
     };
 
-    const updatedCards = [...cards, newCard];
-    setCards(updatedCards);
+    try {
+      const response = await axios.post('http://localhost:3000/cards', newCard);
+      const createdCard = response.data;
+      setCards([...cards, createdCard]);
 
-    setImage('');
-    setTitle('');
-    setDescription('');
-    setAddress('');
-    setTag('');
-    setShowModal(false);
+      setImage('');
+      setTitle('');
+      setDescription('');
+      setAddress('');
+      setTag('');
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error adding card:', error);
+    }
   };
 
   useEffect(() => {
@@ -87,7 +102,7 @@ const Private = () => {
   useEffect(() => {
     const simulatedFetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/publicServices`);
+        const response = await axios.get('http://localhost:3000/publicServices');
         setPublicServices(response.data);
       } catch (error) {
         console.log(error);
@@ -114,6 +129,7 @@ const Private = () => {
       document.removeEventListener('click', handleClickOutsideModalContent);
     };
   }, []);
+
   const Username = localStorage.getItem('Username');
   const IMG = localStorage.getItem('IMG');
 
@@ -153,9 +169,8 @@ const Private = () => {
               </span>
               <input
                 type="file"
-                placeholder="Картинка"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
+                accept="image/*"
+                onChange={handleFileChange}
               />
               <input
                 type="text"
@@ -191,4 +206,4 @@ const Private = () => {
   );
 };
 
-export default Private ;
+export default Private;
