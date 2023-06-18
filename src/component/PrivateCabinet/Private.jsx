@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import p from './Private.module.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const Private = () => {
   const [done, setDone] = useState(null);
@@ -14,6 +15,16 @@ const Private = () => {
   const [subtitleVisible, setSubtitleVisible] = useState(true);
   const [publicServices, setPublicServices] = useState([]);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      // Redirect to another page if the token is missing
+      navigate('/login');
+    }
+  }, [navigate]);
   const modalRef = useRef(null);
 
   const handleToggle = (value) => {
@@ -106,12 +117,14 @@ const Private = () => {
       document.removeEventListener('click', handleClickOutsideModalContent);
     };
   }, []);
+  const Username = localStorage.getItem('Username');
+  const IMG = localStorage.getItem('IMG');
 
   return (
     <div className={p.container}>
       <div className={p.user_box}>
-        <img src="https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg" alt="#" />
-        <h2 className={p.name}>Johnatan</h2>
+        <img src={IMG} alt="#" />
+        <h2 className={p.name}>{Username}</h2>
         <button className={p.green_box} onClick={() => handleToggle(true)}>
           Выполнено
         </button>

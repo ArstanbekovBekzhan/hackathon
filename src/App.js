@@ -4,9 +4,9 @@ import { Homepage } from './pages/Home/Homepage.jsx';
 import { CardDetails } from './pages/Details/Details';
 import Private from './component/PrivateCabinet/Private.jsx'
 import { PublicServicesDynamic } from './pages/PublicServicesDynamic';
-import { Layout } from './component/Layout/Layout.jsx'
 import Registration from './pages/auth/Registration';
 import Login from './pages/auth/Login';
+import { Admin } from './component/Admin/admin.jsx';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/cards/:id" element={<CardDetails />} />
           <Route path="/Categories/:serviceEng/:id" element={<PublicServicesDynamic/>} />
           <Route path="/Private" element={<Private />} />
+          <Route path="/Admin" element={<Admin />} />
         </Route>
       </Routes>
     </>

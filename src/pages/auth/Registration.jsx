@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styles from './Registration.module.css';
@@ -6,7 +6,7 @@ import styles from './Registration.module.css';
 const Registration = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [photo, setPhoto] = useState('');
+  const [img, setimg] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
@@ -21,6 +21,15 @@ const Registration = () => {
     }
     return token;
   };
+  
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      // Redirect to another page or show an error message
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const handleRegistration = async () => {
     if (!username || !password || !phone || !email) {
@@ -29,13 +38,17 @@ const Registration = () => {
     }
 
     const token = generateToken();
+    const IMG = img;
+    const Username = username;
 
     localStorage.setItem('token', token);
+    localStorage.setItem('IMG', IMG);
+    localStorage.setItem("Username", Username);
 
     const registrationData = {
       username,
       password,
-      photo,
+      img,
       phone,
       email,
       token
@@ -44,7 +57,7 @@ const Registration = () => {
     try {
       const response = await axios.post('http://localhost:3000/registration', registrationData);
       console.log('Registration successful:', response.data);
-      navigate('/register');
+      navigate('/private'); // Перенаправление на страницу "Login" после успешной регистрации
     } catch (error) {
       console.log('Registration failed:', error);
     }
@@ -56,7 +69,7 @@ const Registration = () => {
       const reader = new FileReader();
       reader.onload = () => {
         const base64Image = reader.result;
-        setPhoto(base64Image);
+        setimg(base64Image);
       };
       reader.readAsDataURL(file);
     }
@@ -64,11 +77,12 @@ const Registration = () => {
 
   return (
     <div className={styles.container}>
-      <h2>Registration</h2>
+      <h2 className={styles.title}>Registration</h2>
       <form className={styles.form}>
         <label>
           Username:
           <input
+            className={styles.input}
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -77,6 +91,7 @@ const Registration = () => {
         <label>
           Password:
           <input
+            className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -85,6 +100,7 @@ const Registration = () => {
         <label>
           Photo:
           <input
+            className={styles.input}
             type="file"
             accept="image/*"
             onChange={handleFileChange}
@@ -93,6 +109,7 @@ const Registration = () => {
         <label>
           Phone:
           <input
+            className={styles.input}
             type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -101,16 +118,17 @@ const Registration = () => {
         <label>
           Email:
           <input
+            className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <button type="button" onClick={handleRegistration}>
+        <button className={styles.button} type="button" onClick={handleRegistration}>
           Register
         </button>
         <p>
-          Already have an account? <a href="/">Login</a>
+          Already have an account? <a href="http://localhost:3001/login">Login</a>
         </p>
       </form>
     </div>
