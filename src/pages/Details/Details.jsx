@@ -3,13 +3,20 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import SDCard from "./Details.module.css";
 import CardMap from '../../component/Cards/CardMap';
+import Comment from "../../component/Comments/comments";
+import { Modal, Button } from "react-bootstrap";
 
 const CardDetails = () => {
   const [backgroundColor, setBackgroundColor] = useState("");
   const { id } = useParams();
-  const [Address, setAddress] = useState("");
+  const [address, setAddress] = useState("");
   const [card, setCard] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState({
+    type: '',
+    description: ''
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,9 +44,9 @@ const CardDetails = () => {
   };
 
   const getRandomDarkColor = () => {
-    const hue = Math.floor(Math.random() * 360); // Random hue value
-    const saturation = Math.floor(Math.random() * 51) + 50; // Random saturation value between 50 and 100
-    const lightness = Math.floor(Math.random() * 16) + 10; // Random lightness value between 10 and 25
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = Math.floor(Math.random() * 51) + 50;
+    const lightness = Math.floor(Math.random() * 16) + 10;
     return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   };
 
@@ -47,18 +54,71 @@ const CardDetails = () => {
     navigate(-1);
   };
 
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    setModalData({
+      type: '',
+      description: ''
+    });
+  };
+
+  const handleModalInputChange = (e) => {
+    setModalData({
+      ...modalData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleModalSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:3000/cards/${id}`, {
+        ...card,
+        answer: modalData.type,
+        answertext: modalData.description
+      });
+      setCard(prevCard => ({
+        ...prevCard,
+        answer: modalData.type,
+        answertext: modalData.description
+      }));
+    } catch (error) {
+      console.error('Error updating card:', error);
+    }
+    handleModalClose();
+  };
+
+  const updateCardMade = async () => {
+    try {
+      await axios.put(`http://localhost:3000/cards/${id}`, {
+        ...card,
+        made: true,
+      });
+      setCard(prevCard => ({
+        ...prevCard,
+        made: true,
+      }));
+    } catch (error) {
+      console.error('Error updating card:', error);
+    }
+  };
+
   useEffect(() => {
     getRandomGradient();
   }, []);
 
   return (
-    <div>
+    <div className={SDCard.containerDetail}>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div style={{ background: backgroundColor }} className={SDCard.ContentDetails}>
           <div className={SDCard.Black}>
-            <button onClick={goBack}></button>
+            <Button onClick={goBack} />
           </div>
           <div className={SDCard.Details}>
             <div className={SDCard.left}>
@@ -67,12 +127,51 @@ const CardDetails = () => {
             <div className={SDCard.right}>
               <h2>{card.title}</h2>
               <p>{card.text}</p>
-              <h4>{Address}</h4>
+              <h4>{address}</h4>
+              <Button onClick={handleModalOpen}>Добавить</Button>
+              {showModal && (
+                <Modal show={showModal} onHide={handleModalClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Модальное окно</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <form onSubmit={handleModalSubmit}>
+                      <div className={SDCard.cc}>
+                        <input
+                          type="text"
+                          name="type"
+                          placeholder="Тип"
+                          value={modalData.type}
+                          onChange={handleModalInputChange}
+                        />
+                        <textarea
+                          name="description"
+                          placeholder="Описание"
+                          value={modalData.description}
+                          onChange={handleModalInputChange}
+                        ></textarea>
+                      </div>
+                    </form>
+                  </Modal.Body>
+                  <Modal.Footer className={SDCard.cc2}>
+                    <Button variant="secondary" onClick={handleModalClose}>
+                      Отменить
+                    </Button>
+                    <Button variant="primary" onClick={updateCardMade}>
+                      Сохранить
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              )}
             </div>
           </div>
-          <CardMap address={Address} />
+          <CardMap address={address} />
         </div>
       )}
+      <div className={SDCard.box_comment}>
+        <h1 className={SDCard.title_comment}>Коментарий</h1>
+        <Comment cardId={id} />
+      </div>
     </div>
   );
 };

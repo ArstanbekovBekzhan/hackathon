@@ -7,7 +7,7 @@ const Homepage = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 9; // Количество карточек на одной странице
+  const cardsPerPage = 9;
 
   useEffect(() => {
     axios.get('http://localhost:3000/cards')
