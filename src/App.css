@@ -10,3 +10,9 @@ a{
 button {
     cursor: pointer;
 }
+.users{
+    display: flex;
+}
+main .container{
+    padding: 20px;
+}

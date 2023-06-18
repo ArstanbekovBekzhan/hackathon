@@ -1,59 +1,52 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import styles from './Login.module.css';
+import { useNavigate } from 'react-router-dom';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
-const Login = () => {
-  const navigate = useNavigate();
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    setIsLoading(true);
+    const correctUsername = 'username';
+    const correctPassword = 'password';
+    if (username === correctUsername && password === correctPassword) {
+      navigate('/dev');
+    } else {
+      window.location.reload();
+    }
+  };
 
-    // Simulating login API call
-    setTimeout(() => {
-      setIsLoading(false);
-      // Здесь можно добавить логику для проверки существования аккаунта
-      // В данном примере просто перенаправляем на страницу Home при успешном входе
-      navigate('/home');
-    }, 2000);
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <h2>Login</h2>
-      <form className={styles.loginForm}>
-        <div className={styles.formGroup}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            className={styles.formControl}
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            className={styles.formControl}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="button" onClick={handleLogin} disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Login'}
-        </button>
-        <p className={styles.registerLink}>
-          Еще нет аккаунта?{' '}
-          <Link to="/registration">Зарегистрируйтесь!</Link>
-        </p>
-      </form>
-    </div>
+    <Container>
+      <Row className="justify-content-center mt-5">
+        <Col xs={10} sm={8} md={6} lg={4}>
+          <h2 className="text-center">Авторизация</h2>
+          <Form>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Имя пользователя</Form.Label>
+              <Form.Control type="text" placeholder="Введите имя пользователя" value={username} onChange={handleUsernameChange} />
+            </Form.Group>
+
+            <Form.Group controlId="formPassword">
+              <Form.Label>Пароль</Form.Label>
+              <Form.Control type="password" placeholder="Введите пароль" value={password} onChange={handlePasswordChange} />
+            </Form.Group>
+
+            <Button variant="primary" block onClick={handleLogin}>Войти</Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
-};
+}
 
 export default Login;
