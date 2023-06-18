@@ -21,7 +21,6 @@ const Private = () => {
     const token = localStorage.getItem('token');
 
     if (!token) {
-      // Redirect to another page if the token is missing
       navigate('/login');
     }
   }, [navigate]);
@@ -86,10 +85,8 @@ const Private = () => {
   }, [done]);
 
   useEffect(() => {
-    // Simulating fetching publicServices data
     const simulatedFetchData = async () => {
       try {
-        // Replace this with your actual API endpoint to fetch publicServices
         const response = await axios.get(`http://localhost:3000/publicServices`);
         setPublicServices(response.data);
       } catch (error) {
@@ -123,7 +120,7 @@ const Private = () => {
   return (
     <div className={p.container}>
       <div className={p.user_box}>
-        <img src={IMG} alt="#" />
+        <img src="https://aminosart.ru/wp-content/uploads/2021/04/Krutye-avatarki-swag-18.jpg" alt="#" />
         <h2 className={p.name}>{Username}</h2>
         <button className={p.green_box} onClick={() => handleToggle(true)}>
           Выполнено
