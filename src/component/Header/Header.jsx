@@ -38,7 +38,7 @@ const Header = ({ onHeaderHeight }) => {
 
   useEffect(() => {
     handleHeaderHeight();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
 
   const hasToken = localStorage.getItem('token');
