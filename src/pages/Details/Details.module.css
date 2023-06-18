@@ -1,5 +1,6 @@
 .containerDetail {
   width: 100%;
+  display: flex;
 }
 
 .Details {

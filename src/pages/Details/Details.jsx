@@ -148,9 +148,11 @@ const CardDetails = () => {
             <div className={SDCard.left}>
               <img src={card.image} alt="" />
             </div>
-            <div className={SDCard.right}>
-              <h2>{card.title}</h2>
+            <div>
+            <h2>{card.title}</h2>
               <p>{card.text}</p>
+            </div>
+            <div className={SDCard.right}>
               <h4>{address}</h4>
               {
                 !card.made ? <div> <Button onClick={handleModalOpen}>Добавить</Button>
