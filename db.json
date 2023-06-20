@@ -2,6 +2,9 @@
   "cards": [
     {
       "id": "1",
+      "answer": "",
+      "answer_text": "",
+      "tag": "BISHKEKSVET",
       "made": true,
       "Nick": "Нурик",
       "Nick_image": "https://thumbs.dfs.ivi.ru/storage23/contents/d/f/3b0d9897433be7b674d72b78bc0087.jpg",
@@ -22,9 +25,12 @@
         }
       ]
     },
-    
     {
       "id": "2",
+      "answer": "adw",
+      "answer_text": "dadawd",
+      "answer_img": "",
+      "tag": "STATE_AGENCY_OF_ARCHITECTURE",
       "made": false,
       "Nick": "Марина",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg",
@@ -43,12 +49,16 @@
           "user_name": "Алихан",
           "comment": "Согласен, это действительно неприятно смотреть на такие заброшенные здания. Надеюсь, власти обратят на это внимание."
         }
-      ]
+      ],
+      "answertext": ""
     },
-    
     {
       "id": "3",
-      "made": true,
+      "answer": "",
+      "answer_text": "",
+      "answer_img": "",
+      "made": false,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Алексей",
       "Nick_image": "https://avatarzo.ru/wp-content/uploads/category_animals_300x300.jpg",
       "title": "Пешеходный переход",
@@ -68,10 +78,13 @@
         }
       ]
     },
-    
     {
       "id": "4",
+      "answer": "",
+      "answer_text": "",
+      "answer_img": "",
       "made": true,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Елена",
       "Nick_image": "https://aminosart.ru/wp-content/uploads/2021/04/Krutye-avatarki-swag-18.jpg",
       "title": "Светофор",
@@ -91,10 +104,12 @@
         }
       ]
     },
-    
     {
       "id": "5",
+      "answer": "",
+      "answer_text": "",
       "made": false,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Иван",
       "Nick_image": "https://klike.net/uploads/posts/2019-03/1551512888_2.jpg",
       "title": "Дорожные ямы",
@@ -114,10 +129,13 @@
         }
       ]
     },
-    
     {
       "id": "6",
+      "answer": "",
+      "answer_text": "",
+      "answer_img": "",
       "made": true,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Ольга",
       "Nick_image": "https://media.licdn.com/dms/image/C4E03AQHI2QIVppwUDQ/profile-displayphoto-shrink_800_800/0/1598966701723?e=2147483647&v=beta&t=FX-wMZ3LI2-Xji4RlnO8Og5g_li9fo25vkm1TEKOoKg",
       "title": "Остановка общественного транспорта",
@@ -137,10 +155,12 @@
         }
       ]
     },
-    
     {
       "id": "7",
+      "answer": "",
+      "answer_text": "",
       "made": false,
+      "tag": "MINISTRY_OF_TRANSPORTATION",
       "Nick": "Дмитрий",
       "Nick_image": "https://i.mycdn.me/i?r=AzHTJbfR1Z1DrzAcrKsnwlx-qG46nZB1Fj-8cF5kDCK67fcaXBpRGVJKjLLc0JH11no",
       "title": "Отсутствие тротуаров",
@@ -160,21 +180,36 @@
         }
       ]
     },
-    
     {
       "id": "8",
+      "answer": "",
+      "answer_text": "",
+      "answer_img": "",
+      "made": true,
+      "tag": "BISHKEKSVET",
       "Nick": "Максим",
       "Nick_image": "https://abrakadabra.fun/uploads/posts/2021-12/1639216875_2-abrakadabra-fun-p-avatarki-volka-dlya-standoff-2.png",
       "title": "Отсутствие уличного освещения",
       "text": "В ночное время это место становится полной темнотой. Отсутствие уличного освещения создает небезопасную обстановку и вызывает чувство беспокойства. Я не могу понять, почему не установили фонари?",
       "image": "https://kolodischi.by/piximage/wm/L3BpeGltYWdlL3Jlc2l6ZS82ODR4Ki9zdG9yYWdlL3VwbG9hZGVkL2FlYzRmNzRmNjZkMjFmZmFmMzJkOTBiZWI0YWNlOWFjLmpwZw==.jpg",
       "location": "Ахунбаева улица, дом 89",
-      "made": true
+      "comments": [
+        {
+          "user": "Иван",
+          "comment": "Согласен, это действительно проблема. Необходимо обратить внимание властей на эту ситуацию и принять меры по установке уличного освещения."
+        },
+        {
+          "user": "Елена",
+          "comment": "Уличное освещение очень важно для обеспечения безопасности в районе. Я поддерживаю вашу инициативу по установке фонарей."
+        }
+      ]
     },
-    
     {
       "id": "9",
+      "answer": "",
+      "answer_text": "",
       "made": false,
+      "tag": "TAZALYK",
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "Nick": "Екатерина",
       "title": "Проблема мусора на дорогах",
@@ -194,10 +229,13 @@
         }
       ]
     },
-    
     {
       "id": "10",
+      "answer": "",
+      "answer_text": "",
+      "answer_img": "",
       "made": true,
+      "tag": "WATER_SUPPLY_AND_SANITATION",
       "Nick": "Екатерина",
       "Nick_image": "https://kartinki.pibig.info/uploads/posts/2023-04/1681895316_kartinki-pibig-info-p-kartinki-dlya-profilya-arti-instagram-1.jpg",
       "title": "Отсутствие доступа к воде",
@@ -218,14 +256,14 @@
       ]
     }
   ],
-  "users": [
-    
+  "registration": [
   ],
-  "public services": [
+  "publicServices": [
     {
       "id": "1",
-      "Name": "ТАЗАЛЫК",
-      "Nick_image": "https://bishkek.gov.kg/assets/img/company/1530165110_medium.jpeg",
+      "eng": "TAZALYK",
+      "Name": "Тазалык",
+      "image": "https://bishkek.gov.kg/assets/img/company/1530165110_medium.jpeg",
       "number": "34-51-02 (приемная)",
       "text": "Муниципальное предприятие осуществляет коммунальное  обслуживание по санитарной очистке городской территории, содержание городских дорог.",
       "location": "ул. Ростовская №19б",
@@ -233,8 +271,9 @@
     },
     {
       "id": "2",
-      "Name": "МИНИСТЕРСТВО ТРАНСПОРТА И КОММУНИКАЦИЙ КЫРГЫЗСКОЙ РЕСПУБЛИКИ ",
-      "Nick_image": "",
+      "eng": "MINISTRY_OF_TRANSPORTATION",
+      "Name": "Министерство транспорта",
+      "image": "https://st-1.akipress.org/st_gallery/70/1323470.f2bda59559d6b7bf06323276520bd8b3.jpg",
       "number": "+996(312) 314236",
       "text": "Департамент дорожного хозяйства (или Департамент дорожного строительства и эксплуатации дорог) - это организация или структурное подразделение, которое отвечает за планирование, строительство, ремонт и обслуживание дорог и транспортной инфраструктуры на определенной территории",
       "location": "г. Бишкек, ул. Исанова 42, Кыргызская Республика",
@@ -242,8 +281,9 @@
     },
     {
       "id": "3",
-      "Name": "ГОСУДАРСТВЕННОЕ АГЕНТСТВО ​ АРХИТЕКТУРЫ,​ СТРОИТЕЛЬСТВА И ЖИЛИЩНО-КОММУНАЛЬНОГО ХОЗЯЙСТВА ПРИ КАБИНЕТЕ МИНИСТРОВ КЫРГЫЗСКОЙ РЕСПУБЛИКИ ",
-      "Nick_image": "",
+      "eng": "STATE_AGENCY_OF_ARCHITECTURE",
+      "Name": "Государственное агентсво архетиктуры",
+      "image": "https://gosstroy.gov.kg/wp-content/themes/gs-theme/images/logo_gosstroy.png",
       "number": "(0312) 31-29-22",
       "text": "Государственное агентство архитектуры, строительства и жилищно-коммунального хозяйства при Кабинете Министров Кыргызской Республики (ГААСЖКХ) является государственным органом, ответственным за разработку и реализацию политики в области архитектуры, строительства и жилищно-коммунального хозяйства в Кыргызстане.",
       "location": "28 просп. Манаса",
@@ -251,8 +291,9 @@
     },
     {
       "id": "4",
-      "Name": "БИШКЕКСВЕТ",
-      "Nick_image": "",
+      "eng": "BISHKEKSVET",
+      "Name": "Бишкек Свет",
+      "image": "https://economist.kg/content/images/size/w1000/format/webp/wp-content/uploads/2022/02/dizain-bez-nazvaniya-11.png",
       "number": "0 312 650815 (приемная)",
       "text": "Муниципальное предприятие «Бишкексвет» является структурным подразделением мэрии г.Бишкек.",
       "location": "Жоомарта Боконбаева, №232",
@@ -260,8 +301,9 @@
     },
     {
       "id": "5",
+      "eng": "WATER_SUPPLY_AND_SANITATION",
       "Name": "Водоснабжение и водоотведение",
-      "Nick_image": "",
+      "image": "https://knews.kg/wp-content/uploads/2018/01/7954f2ea9b7dbde48023e1d7c9277116.jpg",
       "number": " +996 555 520 521",
       "text": "Водоснабжение и водоотведение - это сфера деятельности, связанная с обеспечением населения, предприятий и общественных объектов качественной питьевой водой и управлением стоками использованной воды и сточных вод.",
       "location": "2 кампус КГТУ им. Раззакова, ул. Малдыбаева Б 34, г. Бишкек",
@@ -269,4 +311,3 @@
     }
   ]
 }
-

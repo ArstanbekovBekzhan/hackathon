@@ -1,0 +1,195 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.user_box {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px black solid;
+  align-items: center;
+}
+
+.user_box img {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10em;
+  margin: 20px 0 50px;
+}
+
+.name {
+  cursor: pointer;
+  border-bottom: 2px black solid;
+  margin-bottom: 50px;
+}
+
+.red_box,
+.green_box {
+  width: 80%;
+  height: 6em;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.red_box {
+  background-color: red;
+}
+
+.green_box {
+  background-color: green;
+}
+
+.red_box:hover,
+.green_box:hover {
+  transform: scale(0.9);
+  transition: 1s;
+}
+
+.red_box:active,
+.green_box:active {
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+.card_desk {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  position: relative;
+  width: 440px;
+  text-align: center;
+  background: orangered;
+  border-radius: 20px;
+  margin: 30px 0;
+  text-decoration: none;
+  color: black;
+}
+
+.card img {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 300px;
+}
+
+.made img {
+  width: 55px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+  margin-left: 200px;
+}
+
+.add_btn {
+  width: 190px;
+  height: 50px;
+  color: white;
+  background-color: blue;
+  border-radius: 20px;
+  border: none;
+  margin: 20px 30px;
+}
+
+.add_btn:hover {
+  transform: scale(0.9);
+  transition: 1s;
+}
+
+.add_btn:active {
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+.modal_content {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal_content form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 2px white solid;
+  padding: 20px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.modal_content span {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 42px;
+}
+
+.modal_content input,
+.modal_content textarea,
+.modal_content select,
+.modal_content ::placeholder,
+.modal_content button {
+  margin-bottom: 20px;
+  background-color: darkslategrey;
+  color: white;
+  border: none;
+  padding-left: 5px;
+}
+
+input[type=file] {
+  margin-top: 30px;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 35%;
+}
+
+.modal_content input,
+.modal_content textarea,
+.modal_content select {
+  height: 60px;
+}
+
+.modal_content textarea {
+  height: 160px;
+  resize: none;
+  padding-top: 15px;
+}
+
+.modal_content input:active {
+  padding-left: 5px;
+  border: none;
+}
+
+.modal_content select {
+  height: 40px;
+}
+
+.modal_content button {
+  width: 40%;
+  height: 60px;
+  margin: 30px auto;
+}

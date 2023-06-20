@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+  
+.user_box {
+    
+    display: flex;
+    flex-direction: column;
+    border-right: 2px black solid;
+    align-items: center;
+}
+  
+.user_box img {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10em;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+  
+.name {
+    cursor: pointer;
+    border-bottom: 2px black solid;
+    margin-bottom: 50px;
+    text-align: center;
+}
+  
+ .red_box,
+.green_box {
+    width: 80%;
+    height: 6em;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 50px;
+}
+  
+.red_box {
+    background-color: red;
+}
+  
+.green_box {
+    background-color: green;
+}
+  
+.red_box:hover,
+.green_box:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+  
+.red_box:active,
+.green_box:active {
+    scale: 0.9;
+    transition: 1s;
+}
+  
+.card_desk {
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+}
+  
+.card {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 30px;
+    text-decoration: none;
+    color: black;
+}
+  
+.card img {
+    width: 300px;
+    height: 200px;
+}
+  
+.subtitle {
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}

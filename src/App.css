@@ -7,3 +7,12 @@ a{
     color: black;
     text-decoration: none;
 }
+button {
+    cursor: pointer;
+}
+.users{
+    display: flex;
+}
+main .container{
+    padding: 20px;
+}
